@@ -1,0 +1,321 @@
+/* Header */
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.services-header h1 {
+  font-size: 48px;
+  color: #063447;
+  margin-top: 60px;
+}
+
+.services-header h1 span {
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+.services-header p {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #555;
+}
+/* WhatsApp Floating Button */
+/* WhatsApp Floating Button with Blink/Pulse */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    /* Animation */
+    animation: pulse 1.5s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+    animation: none; /* stop pulse on hover */
+}
+
+
+/* Filter Buttons */
+.services-filter {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-filter button {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  border: 2px solid #00b3cc;
+  background: white;
+  color: #00b3cc;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-filter button.active,
+.services-filter button:hover {
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  color: white;
+  border: none;
+}
+
+/* Featured Service */
+.featured-service {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+/* Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  margin: 0 auto 120px;
+  padding: 10 5px;
+  max-width: 1200px;
+}
+
+/* Card */
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(0, 179, 204, 0.35);
+}
+
+/* Image */
+.service-img {
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.15);
+}
+
+/* Content */
+.service-content {
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-content h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #063447;
+}
+
+.service-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.learn-btn {
+  margin-top: auto;
+  padding: 12px 30px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.learn-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 179, 204, 0.4);
+}
+
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-header h1 {
+    font-size: 34px;
+  }
+
+  .service-img {
+    height: 180px;
+  }
+
+  .services-grid {
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .featured-service {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 1024px) {
+
+  .services-header h1 {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  .services-header p {
+    font-size: 17px;
+  }
+
+  .services-grid {
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .service-img {
+    height: 200px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Header */
+  .services-header {
+    margin-bottom: 35px;
+  }
+
+  .services-header h1 {
+    font-size: 32px;
+    margin-top: 25px;
+  }
+
+  .services-header p {
+    font-size: 15px;
+  }
+
+  /* Filter Buttons */
+  .services-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .services-filter button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 80px;
+    padding: 0 15px;
+  }
+
+  /* Card */
+  .service-card {
+    border-radius: 18px;
+  }
+
+  .service-img {
+    height: 170px;
+  }
+
+  .service-content {
+    padding: 22px;
+  }
+
+  .service-content h3 {
+    font-size: 20px;
+  }
+
+  .service-content p {
+    font-size: 14px;
+  }
+
+  /* Button */
+  .learn-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  /* WhatsApp */
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media (max-width: 480px) {
+
+  .services-header h1 {
+    font-size: 26px;
+  }
+
+  .services-header p {
+    font-size: 14px;
+  }
+
+  .service-content h3 {
+    font-size: 18px;
+  }
+
+  .learn-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+

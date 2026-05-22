@@ -1,0 +1,377 @@
+:root {
+  --teal: linear-gradient(90deg, #00b3cc, #1e90ff);
+  --dark: #ffffff;
+}
+
+/* PAGE */
+.appointment-page {
+  min-height: 100vh;
+  padding: 120px 5% 50px;
+  background: #f5fbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTAINER */
+.appointment-container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(13, 124, 124, 0.1);
+}
+
+/* LEFT SIDE */
+.appointment-info-side {
+  padding: 60px;
+  background: white;            /* ✅ white background */
+  color: #063447;
+}
+
+/* BADGE */
+.badge-new {
+  background: var(--teal);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* HEADING */
+.appointment-info-side h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  line-height: 1.1;
+  background: var(--teal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.appointment-info-side p {
+  color: #4a5c6a;
+  margin-bottom: 30px;
+}
+
+/* GRADIENT TEXT */
+.teal-text {
+  background: var(--teal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CONTACT MINI CARDS (VERTICAL) */
+.contact-mini-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.mini-c {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: #f8fbff;          /* light white card */
+  border: 1px solid #eef3f9;
+  transition: 0.3s;
+}
+
+.mini-c:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(13, 124, 124, 0.12);
+}
+
+/* ICON */
+.icon {
+  color: #1e90ff;
+  font-size: 22px;
+  background: #eaf4ff;
+  padding: 14px;
+  border-radius: 50%;
+}
+
+/* TEXT */
+.mini-c h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #063447;
+}
+
+.mini-c p {
+  margin: 0;
+  color: #5f7485;
+}
+
+/* DOCTOR BADGE */
+.doctor-badge-appointment {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f0f9ff;
+  padding: 15px;
+  border-radius: 20px;
+  border-left: 4px solid #1e90ff;
+}
+
+.doctor-badge-appointment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* RIGHT SIDE FORM */
+.appointment-form-side {
+  position: relative;
+  padding: 60px;
+  background: white;
+  overflow: hidden;
+}
+
+/* BLUR BACKGROUND IMAGE */
+.appointment-form-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("hero-bg1.jpg") center / cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.appointment-form-side > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #063447;
+  font-size: 0.9 rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 15px;
+  border: 2px solid #f1f2f6;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1e90ff;
+  outline: none;
+  background: #f9ffff;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* BUTTON */
+.submit-booking-btn {
+   margin-bottom: 20px;
+   margin-top: 40px;
+  width: 100%;
+  padding: 20px;
+  background: var(--teal);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 15px 30px rgba(13, 124, 124, 0.3);
+}
+
+.submit-booking-btn:hover {
+  transform: translateY(-5px);
+}
+
+/* SECURE TEXT */
+.secure-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: black;
+}
+/* WhatsApp Floating Button */
+/* WhatsApp Floating Button with Blink/Pulse */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    /* Animation */
+    animation: pulse 1.5s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+    animation: none; /* stop pulse on hover */
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .appointment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-info-side,
+  .appointment-form-side {
+    padding: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1024px) {
+
+  .appointment-page {
+    padding: 90px 4% 40px;
+  }
+
+  .appointment-info-side h1 {
+    font-size: 2.4rem;
+  }
+
+  .appointment-info-side,
+  .appointment-form-side {
+    padding: 45px;
+  }
+
+  .contact-mini-cards {
+    gap: 15px;
+  }
+}
+@media (max-width: 768px) {
+
+  .appointment-page {
+    padding: 70px 15px 40px;
+  }
+
+  .appointment-container {
+    border-radius: 24px;
+  }
+
+  /* LEFT SIDE */
+  .appointment-info-side {
+    padding: 30px 25px;
+    text-align: center;
+  }
+
+  .appointment-info-side h1 {
+    font-size: 2rem;
+  }
+
+  .appointment-info-side p {
+    font-size: 0.9rem;
+  }
+
+  .contact-mini-cards {
+    align-items: center;
+  }
+
+  .mini-c {
+    padding: 14px 18px;
+  }
+
+  .mini-c h4 {
+    font-size: 1rem;
+  }
+
+  /* DOCTOR BADGE */
+  .doctor-badge-appointment {
+    justify-content: center;
+    text-align: left;
+  }
+
+  /* FORM SIDE */
+  .appointment-form-side {
+    padding: 30px 25px;
+  }
+
+  .appointment-form-side::before {
+    filter: blur(4px); /* 🔑 lighter blur */
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 13px;
+    font-size: 0.9rem;
+  }
+
+  .submit-booking-btn {
+    padding: 16px;
+    font-size: 1rem;
+    margin-top: 25px;
+  }
+
+  /* WhatsApp */
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media (max-width: 480px) {
+
+  .appointment-info-side h1 {
+    font-size: 1.7rem;
+  }
+
+  .badge-new {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+
+  .mini-c {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .submit-booking-btn {
+    font-size: 0.95rem;
+  }
+}
+

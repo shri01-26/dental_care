@@ -1,0 +1,363 @@
+/* =========================
+   GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  overflow-x: hidden;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 80px);
+ 
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  min-height: calc(100vh - 80px);
+  padding: 100px 16px 20px; /* 👈 upar space for header */
+  border-right: 1px solid #e5e7eb;
+}
+
+
+/* LOGO */
+.sidebar .logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f3c88;
+  margin-bottom: 40px;
+}
+
+/* MENU LIST */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* LINK RESET (🔥 IMPORTANT FIX) */
+.sidebar a {
+  text-decoration: none;     /* underline remove */
+  color: inherit;            /* blue color remove */
+  display: block;
+}
+
+/* MENU ITEM */
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ICON */
+.sidebar li svg {
+  font-size: 16px;
+}
+
+/* HOVER + ACTIVE */
+.sidebar li:hover,
+.sidebar li.active {
+  background: #1f3c88;
+  color: #ffffff;
+}
+
+/* =========================
+   MAIN
+========================= */
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.dashboard-header span {
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* =========================
+   STATS CARDS
+========================= */
+.stats-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.stat-card strong {
+  font-size: 28px;
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* =========================
+   CHART + TODAY
+========================= */
+.dashboard-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+}
+
+/* =========================
+   CHART
+========================= */
+.chart-card {
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+}
+
+.chart-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chart-placeholder {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-end;
+  height: 200px;
+  gap: 14px;
+}
+
+.bar {
+  width: 28px;
+  background: #1f3c88;
+  border-radius: 8px 8px 0 0;
+}
+
+/* =========================
+   TODAY
+========================= */
+.today-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.today-card h3 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.today-card ul {
+  padding-left: 18px;
+}
+
+.today-card li {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   TREATMENTS
+========================= */
+.treatment-card {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.treatment-card h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.treatment-card li {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+/* =========================
+   MICRO ANIMATIONS (SAFE)
+========================= */
+
+/* Page smooth load */
+.dashboard-layout,
+.dashboard-main,
+.sidebar {
+  animation: softFade 0.6s ease both;
+}
+
+@keyframes softFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sidebar hover micro-move */
+.sidebar li {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebar li:hover {
+  transform: translateX(4px);
+}
+
+/* Cards subtle lift (NO color change) */
+.stat-card,
+.today-card,
+.treatment-card,
+.chart-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.stat-card:hover,
+.today-card:hover,
+.treatment-card:hover,
+.chart-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Stats count gentle pulse */
+.stat-card strong {
+  animation: numberPulse 3s ease-in-out infinite;
+}
+
+@keyframes numberPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* Chart bars smooth grow */
+.bar {
+  transform-origin: bottom;
+  animation: barRise 0.8s ease forwards;
+}
+
+@keyframes barRise {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Sidebar icon smooth hover */
+.sidebar li svg {
+  transition: transform 0.3s ease;
+}
+
+.sidebar li:hover svg {
+  transform: scale(1.1);
+}
+
+/* Lists gentle reveal */
+.today-card li,
+.treatment-card li {
+  animation: listFade 0.5s ease both;
+}
+
+.today-card li:nth-child(1),
+.treatment-card li:nth-child(1) { animation-delay: 0.1s; }
+.today-card li:nth-child(2),
+.treatment-card li:nth-child(2) { animation-delay: 0.2s; }
+.today-card li:nth-child(3),
+.treatment-card li:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes listFade {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

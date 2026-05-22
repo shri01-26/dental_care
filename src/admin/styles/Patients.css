@@ -1,0 +1,439 @@
+/* =========================
+   PAGE
+========================= */
+.patients-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(14, 35, 56, 0.06),
+    rgba(117, 205, 243, 0.12)
+  );
+  padding: 40px 20px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.patients-container {
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  animation: fadeUp 0.6s ease;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+.patients-info-side {
+  padding: 50px;
+  background: linear-gradient(135deg, #063447, #0a5c78);
+  color: white;
+}
+
+.badge-new {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.patients-info-side h1 {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.teal-text {
+  color: #00e5ff;
+}
+
+.patients-info-side p {
+  opacity: 0.9;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* STATS */
+.stats-box {
+  display: flex;
+  gap: 25px;
+}
+
+.stats-box div {
+  text-align: center;
+}
+
+.stats-box strong {
+  font-size: 26px;
+  display: block;
+}
+
+.stats-box span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+.patients-list-side {
+  padding: 40px;
+}
+
+.patients-list-side h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #063447;
+}
+
+/* =========================
+   CARDS
+========================= */
+.patients-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.patient-card {
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  transition: 0.35s ease;
+}
+
+.patient-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,179,204,0.25);
+}
+
+/* AVATAR */
+.avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00b3cc, #1e90ff);
+  color: white;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* DETAILS */
+.patient-details h3 {
+  margin-bottom: 4px;
+  color: #063447;
+}
+
+.patient-details p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* STATUS */
+.status {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.status.completed {
+  background: #d4f5e2;
+  color: #1b7f4d;
+}
+
+.status.upcoming {
+  background: #e3f1ff;
+  color: #1e6fd9;
+}
+
+.status.pending {
+  background: #fff1d6;
+  color: #b7791f;
+}
+
+/* BUTTON */
+.view-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,179,204,0.4);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .patients-container {
+    grid-template-columns: 1fr;
+  }
+
+  .patients-info-side {
+    text-align: center;
+  }
+
+  .stats-box {
+    justify-content: center;
+  }
+}
+/* VIEW MODAL */
+.patient-view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.patient-view-card {
+  width: 380px;
+  background: white;
+  border-radius: 18px;
+  padding: 26px;
+  animation: popIn 0.35s ease;
+}
+
+.patient-view-card h3 {
+  margin-bottom: 18px;
+  color: #1e90ff;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.status-section {
+  margin-top: 16px;
+}
+
+.status-section label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-section select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* ACTIONS */
+.quick-actions {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.quick-actions a {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00b3cc, #1e90ff);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* NOTES */
+.doctor-notes {
+  width: 100%;
+  min-height: 70px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 14px;
+  resize: none;
+}
+
+/* CLOSE */
+.close-view-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background: #063447;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* =========================
+   TABLET (≤ 1024px)
+========================= */
+@media (max-width: 1024px) {
+  .patients-container {
+    grid-template-columns: 1fr;
+  }
+
+  .patients-info-side {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .patients-info-side h1 {
+    font-size: 36px;
+  }
+
+  .stats-box {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .patients-list-side {
+    padding: 35px;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+  .patients-page {
+    padding: 20px 12px;
+  }
+
+  .patients-info-side {
+    padding: 30px 22px;
+  }
+
+  .patients-info-side h1 {
+    font-size: 30px;
+  }
+
+  .patients-info-side p {
+    font-size: 14px;
+  }
+
+  .stats-box strong {
+    font-size: 22px;
+  }
+
+  .patients-list-side {
+    padding: 25px;
+  }
+
+  .patients-list-side h2 {
+    font-size: 22px;
+  }
+
+  /* CARD MOBILE LAYOUT */
+  .patient-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    margin: auto;
+  }
+
+  .patient-details p {
+    font-size: 13px;
+  }
+
+  .view-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  .patients-info-side {
+    padding: 25px 16px;
+  }
+
+  .patients-info-side h1 {
+    font-size: 26px;
+  }
+
+  .badge-new {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .stats-box {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .stats-box strong {
+    font-size: 20px;
+  }
+
+  .patients-list-side {
+    padding: 20px 16px;
+  }
+
+  /* MODAL FIX */
+  .patient-view-card {
+    width: 92%;
+    padding: 22px;
+  }
+
+  .detail-row {
+    font-size: 13px;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+  }
+}
