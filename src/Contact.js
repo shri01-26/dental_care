@@ -6,7 +6,7 @@ import './Contact.css';
 
 const Contact = () => {
   // --- Cursor Position State ---
-  const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
+
 
   // ✅ PAGE LOAD PE SCROLL TOP
   useEffect(() => {
