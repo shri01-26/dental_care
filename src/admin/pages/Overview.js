@@ -1,12 +1,6 @@
 import React from "react";
 import "../styles/Dashboard.css";
-import {
-  FaCalendarAlt,
-  FaUserInjured,
-  FaEnvelope,
-  FaMoneyBill,
-  FaCog,
-} from "react-icons/fa";
+
 
 const Overview = () => {
   return (
