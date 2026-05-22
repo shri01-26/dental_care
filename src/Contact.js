@@ -5,40 +5,39 @@ import { FaWhatsapp } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  // --- Cursor Position State ---
-const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // --- Track cursor position (optional) ---
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // ✅ PAGE LOAD PE SCROLL TOP
+  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Mouse move listener with cleanup
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
-
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // --- Animation Variants ---
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-    }
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
   };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
     <div className="contact-wrapper">
-
-     
-
       {/* --- Contact Hero Section --- */}
       <motion.section
         className="contact-hero"
@@ -147,7 +146,6 @@ const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
       >
         <FaWhatsapp size={28} />
       </a>
-
     </div>
   );
 };
