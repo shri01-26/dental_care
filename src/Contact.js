@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  // --- Track cursor position (optional) ---
+  // --- Track cursor position ---
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   // Scroll to top on page load
@@ -37,7 +37,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-wrapper">
+    // Yahan mousePos ki value ko background gradient mein assign kiya gaya hai
+    <div 
+      className="contact-wrapper"
+      style={{
+        background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(212, 175, 55, 0.07), transparent 80%)`,
+        minHeight: '100vh'
+      }}
+    >
       {/* --- Contact Hero Section --- */}
       <motion.section
         className="contact-hero"
